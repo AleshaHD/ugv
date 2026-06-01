@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ЗИЛ</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="factory-page">
+        <a href="index.html" class="back-button">← Назад</a>
+        <div class="factory-page">
+            <h1>ЗИЛ</h1>
+            <div class="models-grid" id="models-container"></div>
+            <script>
+                const models = [
+                    { name: "ЗИС-110", year: "1945-1958", engine: "6.0 л, 140 л.с.", speed: "160 км/ч", image: "images/ZIS_110.jpg", description: "Представительский лимузин для высшего руководства СССР. имел радиоприёмник, гидравлические стеклоподъёмники, стеклянную перегородку между салоном и водителем. Создан с оглядкой на Packard." },
+                    { name: "ЗИЛ-111", year: "1959-1967", engine: "6.0 л, 200 л.с.", speed: "170 км/ч", image: "images/ZIL_111.jpg", description: "Автомобиль для первых лиц государства. Cуществовали модификации с кондиционером (ЗИЛ‑111А) и кабриолет (ЗИЛ‑111В) для парадов. Дизайн вдохновлён американскими лимузинами конца 1950‑х" },
+                    { name: "ЗИЛ-114", year: "1967-1978", engine: "7.0 л, 300 л.с.", speed: "190 км/ч", image: "images/ZIL_114.jpg", description: "Сверхнадёжный бронированный лимузин. Первый ЗИЛ с дисковыми тормозами. Основной служебный автомобиль Л. И. Брежнева." },
+                    { name: "ЗИЛ-4104", year: "1978-1985", engine: "7.7 л, 315 л.с.", speed: "190 км/ч", image: "images/ZIL_4104.jpg", description: "Последнее поколение советских правительственных лимузинов. создан на базе ЗИЛ‑114 с обновлённым дизайном и улучшенными системами комфорта." },
+                    { name: "ЗИЛ-117", year: "1971-1978", engine: "6.9 л, 300 л.с.", speed: "210 км/ч", image: "images/ZIL_117.jpg", description: "Двухдверный седан. Использовался для сопровождения кортежей и как парадный кабриолет." },
+                    { name: "ЗИЛ-41047", year: "1986-2002", engine: "7.7 л, 315 л.с.", speed: "210 км/ч", image: "images/ZIL_41047.jpg", description: "Последний серийный легковой автомобиль завода им. Лихачёва. Оснащался 3‑ступенчатой автоматической коробкой передач." },
+                    { name: "ЗИЛ-41052", year: "С 1985 до н.в", engine: "7.7 л, 315 л.с.", speed: "210 км/ч", image: "images/ZIL_41052.jpg", description: "Укороченная версия ЗИЛ-114. Броня выдерживала выстрел из винтовки Мосина с 100 м, стёкла толщиной 43 мм, гидродомкраты для подъёма тяжёлых стёкол. Использовался Горбачёвым и Ельциным" }
+                ];
+                const container = document.getElementById("models-container");
+                container.innerHTML = models.map(model => `
+                    <div class="model-card">
+                        <img src="${model.image}" alt="${model.name}">
+                        <h3>${model.name}</h3>
+
+                        <p><b>Годы выпуска:</b> ${model.year}</p>
+                        <p><b>Двигатель:</b> ${model.engine}</p>
+                        <p><b>Скорость:</b> ${model.speed}</p>
+
+                        <p>${model.description}</p>
+                    </div>
+                    `).join("");
+            </script>
+        </div>
+    </body>
+</html>

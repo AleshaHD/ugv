@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>АЗЛК</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="factory-page">
+        <a href="index.html" class="back-button">← Назад</a>
+        <div class="factory-page">
+            <h1>АЗЛК</h1>
+            <div class="models-grid" id="models-container"></div>
+            <script>
+                const models = [
+                    { name: "Москвич-400", year: "1946-1954", engine: "1.1 л, 23 л.с.", speed: "90 км/ч", image: "images/Moskvich_400.jpg", description: "Первый массовый советский автомобиль для индивидуального использования. Выпускался в версиях седан, кабриолет, фургон и пикап." },
+                    { name: "Москвич-402", year: "1956-1958", engine: "1.2 л, 35 л.с.", speed: "105 км/ч", image: "images/Moskvich_402.jpg", description: "имел панорамные стёкла, телескопические амортизаторы, бесшкворневую подвеску. Первая оригинальная разработка завода после копирования Opel." },
+                    { name: "Москвич-407", year: "1958-1963", engine: "1.36 л, 45 л.с.", speed: "115 км/ч", image: "images/Moskvich_407.jpg", description: "Первый советский автомобиль с полностью алюминиевыми поршнями. Получил золотые медали на Всемирной выставке в Брюсселе (1958). С 1959 года — 4‑ступенчатая КПП." },
+                    { name: "Москвич-408", year: "1964-1975", engine: "1.36 л, 50 л.с.", speed: "120 км/ч", image: "images/Moskvich_408.jpg", description: "Современный по тем временам дизайн.  получил новый дизайн с характерным «носом» и решёткой радиатора. Активно экспортировался: в 1965 году 45 % выпуска ушло на экспорт, в 1969 году — уже 64 % ." },
+                    { name: "Москвич-412", year: "1967-1998", engine: "1.5 л, 75 л.с.", speed: "140 км/ч", image: "images/Moskvich_412.jpg", description: "Самый быстрый и мощный Москвич своего времени. Алюминиевый блок цилиндров, участвовал в международных ралли. Экспортировался в 70 стран." },
+                    { name: "Москвич-2140", year: "1976-1988", engine: "1.5 л, 75 л.с.", speed: "145 км/ч", image: "images/Moskvich_2140.jpg", description: "рестайлинг 412‑го с улучшенной шумоизоляцией, новыми бамперами и фонарями. Последняя массовая заднеприводная модель завода" }
+                ];
+                const container = document.getElementById("models-container");
+                container.innerHTML = models.map(model => `
+                    <div class="model-card">
+                        <img src="${model.image}" alt="${model.name}">
+                        <h3>${model.name}</h3>
+
+                        <p><b>Годы выпуска:</b> ${model.year}</p>
+                        <p><b>Двигатель:</b> ${model.engine}</p>
+                        <p><b>Скорость:</b> ${model.speed}</p>
+
+                        <p>${model.description}</p>
+                    </div>
+                    `).join("");
+            </script>
+        </div>
+    </body>
+</html>

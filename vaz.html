@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ВАЗ</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="factory-page">
+        <a href="index.html" class="back-button">← Назад</a>
+        <div class="factory-page">
+            <h1>ВАЗ</h1>
+            <div class="models-grid" id="models-container"></div>
+            <script>
+                const models = [
+                    { name: "ВАЗ-2101 'Жигули' ('Копейка')", year: "1970-1988", engine: "1.2 л, 59 л.с.", speed: "135-145 км/ч", image: "images/VAZ_2101.jpg", description: "Легендарная 'Копейка'. Первая модель ВАЗа, созданная на базе Fiat 124. Задний привод, 4‑ступенчатая МКПП, дисковые передние и барабанные задние тормоза." },
+                    { name: "ВАЗ-2102", year: "1971-1985", engine: "1.2-1.3 л, 62-69 л.с.", speed: "130-140 км/ч", image: "images/VAZ_2102.jpg", description: "Универсал на базе 'Копейки'. Универсал с увеличенным багажником (до 1300 л при складывании заднего дивана), усиленная подвеска" },
+                    { name: "ВАЗ-2103", year: "1972-1984", engine: "1.5 л, 72 л.с.", speed: "145 км/ч", image: "images/VAZ_2103.jpg", description: "«Люксовая» версия ВАЗ-2101 с хромированной решёткой, улучшенной отделкой салона и шумоизоляцией." },
+                    { name: "ВАЗ-2106", year: "1976-2006", engine: "1.6 л, 75 л.с.", speed: "150 км/ч", image: "images/VAZ_2106.jpg", description: "Одна из самых популярных моделей ВАЗа. Прозвище - 'Шестёрка'. Модернизированная версия ВАЗ-2103 с улучшенной динамикой и комфортом." },
+                    { name: "ВАЗ-2105", year: "1979-2010", engine: "1.3 л, 64 л.с.", speed: "140 км/ч", image: "images/VAZ_2105.jpg", description: "Упрощённая комплектация по сравнению с ВАЗ-2106, но сохранившая надёжность. Первый ВАЗ с прямоугольными фарами." },
+                    { name: "ВАЗ-2108 'Спутник'", year: "1984-2005", engine: "1.3-1.5 л, 65-76 л.с.", speed: "145-160 км/ч", image: "images/VAZ_2108.jpg", description: "Первый переднеприводной автомобиль ВАЗа. Прозвище 'Восьмёрка'. Трёхдверный хетчбэк, двигатель с увеличенным ходом поршня." },
+                    { name: "LADA NIVA (ВАЗ-2121)", year: "С 1977 до н.в.", engine: "1.6-1.7 л, 80-83 л.с.", speed: "137 км/ч", image: "images/NIVA.jpg", description: "Первый компактный внедорожник с постоянным полным приводом. Экспортировался более чем в 100 стран. Один из самых успешных советских автомобилей на мировом рынке." }
+                ];
+                const container = document.getElementById("models-container");
+                container.innerHTML = models.map(model => `
+                    <div class="model-card">
+                        <img src="${model.image}" alt="${model.name}">
+                        <h3>${model.name}</h3>
+
+                        <p><b>Годы выпуска:</b> ${model.year}</p>
+                        <p><b>Двигатель:</b> ${model.engine}</p>
+                        <p><b>Скорость:</b> ${model.speed}</p>
+
+                        <p>${model.description}</p>
+                    </div>
+                    `).join("");
+            </script>
+        </div>
+    </body>
+</html>

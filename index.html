@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Автопром СССР</title>
+
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body class="main-page">
+		<header class="header">
+			<h1>Автомобильная промышленность СССР</h1>
+			<p>Интерактивная карта крупнейших заводов</p>
+		</header>
+		<main class="content">
+			<!-- КАРТА -->
+			<section class="map-section">
+				<div class="map-container">
+					<img src="Russia_edcp_location_map.png"
+						 alt="Карта СССР"
+						 class="map-image">
+					<!-- ГАЗ -->
+					<div class="marker"
+						 style="top: 53%; left: 60%;"
+						 onclick="showFactory('gaz')">
+						<div class="tooltip">
+							<b>ГАЗ</b><br>
+							Горьковский автомобильный завод
+						</div>
+					</div>
+					<!-- ВАЗ -->
+					<div class="marker"
+						 style="top: 76%; left: 78%;"
+						 onclick="showFactory('vaz')">
+						<div class="tooltip">
+							<b>ВАЗ</b><br>
+							Волжский автомобильный завод
+						</div>
+					</div>
+					<!-- МОСКВА -->
+					<div class="marker"
+						 style="top: 47%; left: 33%;"
+						 onclick="showFactory('moscow')">
+						<div class="tooltip">
+							<b>Москва</b><br>
+							ЗИЛ и АЗЛК
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ПАНЕЛЬ -->
+			<aside class="info-panel">
+				<div id="factory-info">
+					<h2>Автопром СССР</h2>
+					<p>
+						Нажмите на точку на карте,
+						чтобы увидеть информацию
+						о заводе.
+					</p>
+				</div>
+			</aside>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>

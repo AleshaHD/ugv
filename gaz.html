@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ГАЗ</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="factory-page">
+        <a href="index.html" class="back-button">← Назад</a>
+        <div class="factory-page">
+            <h1>ГАЗ</h1>
+            <div class="models-grid" id="models-container"></div>
+            <script>
+                const models = [
+                    { name: "ГАЗ-М20 'Победа'", year: "1946-1958", engine: "2.1 л, 52 л.с.", speed: "105 км/ч", image: "images/GAZ_M20.jpg", description: "Первая в СССР 'Победа'. Легендарный автомобиль, первая в мире массовая модель с понтонной формой кузова (без выступающих крыльев). Символ послевоенного восстановления СССР." },
+                    { name: "ГАЗ-12 'ЗИМ'", year: "1948-1960", engine: "3.5 л, 90 л.с.", speed: "120 км/ч", image: "images/GAZ_12.jpg", description: "6‑местный седан с гидромуфтой трансмиссии (аналог автоматической КПП). Использовался номенклатурой и как такси в крупных городах." },
+                    { name: "ГАЗ-21 'Волга'", year: "1956-1970", engine: "2.4 л, 65-80 л.с.", speed: "120-130 км/ч", image: "images/GAZ_21.jpg", description: "Культовая Волга. Культовая модель с «оленьей» эмблемой. Выпускалась в трёх сериях (1956–1970). Стала символом советского автопрома 1950–60‑х." },
+                    { name: "ГАЗ-13 'Чайка'", year: "1959-1981", engine: "5.5 л, 195 л.с.", speed: "160 км/ч", image: "images/GAZ_13.jpg", description: "Представительский автомобиль высшего класса для партийной элиты. Имел V‑образный 8‑цилиндровый двигатель, автоматическую КПП, гидроусилитель руля." },
+                    { name: "ГАЗ-24 'Волга'", year: "1968-1985", engine: "2.4 л, 95 л.с.", speed: "145 км/ч", image: "images/GAZ_24.jpg", description: "Модернизированная версия ГАЗ-21 с улучшенным двигателем и подвеской. Знакома по фильму «Берегись автомобиля»." },
+                    { name: "ГАЗ-3102 'Волга'", year: "1982-2008", engine: "2.4 л, 102 л.с.", speed: "147-180 км/ч", image: "images/GAZ_3102.jpg", description: "Представительская версия «Волги» для советской номенклатуры. Отличалась улучшенной отделкой салона, усиленной подвеской и более мощными двигателями по сравнению с ГАЗ‑24." }
+                ];
+                const container = document.getElementById("models-container");
+                container.innerHTML = models.map(model => `
+                    <div class="model-card">
+                        <img src="${model.image}" alt="${model.name}">
+                        <h3>${model.name}</h3>
+
+                        <p><b>Годы выпуска:</b> ${model.year}</p>
+                        <p><b>Двигатель:</b> ${model.engine}</p>
+                        <p><b>Скорость:</b> ${model.speed}</p>
+
+                        <p>${model.description}</p>
+                    </div>
+                    `).join("");
+            </script>
+        </div>
+    </body>
+</html>
